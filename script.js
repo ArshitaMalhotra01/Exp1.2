@@ -1,20 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
+const svg = document.getElementById("svgCanvas");
+const countText = document.getElementById("count");
 
-    const filter = document.getElementById("filter");
-    const cards = document.querySelectorAll(".card");
+let circles = [];
 
-    filter.addEventListener("change", function () {
-        const selectedValue = filter.value;
+svg.addEventListener("click", function (event) {
+    const rect = svg.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
 
-        cards.forEach(function (card) {
-            const category = card.getAttribute("data-category");
+    const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
+    );
 
-            if (selectedValue === "all" || selectedValue === category) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    });
+    circle.setAttribute("cx", x);
+    circle.setAttribute("cy", y);
+    circle.setAttribute("r", 8);
+    circle.setAttribute("fill", "#2f80ff");
 
+    svg.appendChild(circle);
+    circles.push(circle);
+    updateCount();
 });
+
+function undo() {
+    if (circles.length > 0) {
+        const last = circles.pop();
+        svg.removeChild(last);
+        updateCount();
+    }
+}
+
+function updateCount() {
+    countText.textContent = circles.length;
+}
