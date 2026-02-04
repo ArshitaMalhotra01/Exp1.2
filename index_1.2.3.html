@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Drawing Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="toolbar">
+        <button onclick="undo()">Undo</button>
+    </div>
+
+    <div class="canvas-wrapper">
+        <svg id="svgCanvas"></svg>
+    </div>
+
+    <div class="counter">
+        Circles drawn: <span id="count">0</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

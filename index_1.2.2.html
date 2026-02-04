@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Product Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Product Filter</h1>
+
+    <div class="filter-container">
+        <label for="filter">Filter by:</label>
+        <select id="filter">
+            <option value="all">All Products</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+        </select>
+    </div>
+
+    <div class="products">
+        <div class="card" data-category="electronics">
+            <h2>Wireless Headphones</h2>
+            <p class="price">$129.99</p>
+            <span class="tag electronics">electronics</span>
+        </div>
+
+        <div class="card" data-category="clothing">
+            <h2>Cotton T-Shirt</h2>
+            <p class="price">$24.99</p>
+            <span class="tag clothing">clothing</span>
+        </div>
+
+        <div class="card" data-category="electronics">
+            <h2>Bluetooth Speaker</h2>
+            <p class="price">$89.99</p>
+            <span class="tag electronics">electronics</span>
+        </div>
+
+        <div class="card" data-category="clothing">
+            <h2>Denim Jeans</h2>
+            <p class="price">$59.99</p>
+            <span class="tag clothing">clothing</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
